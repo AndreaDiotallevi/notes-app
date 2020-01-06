@@ -9,5 +9,5 @@
     }
   }
 
-  exports.Note = Note;
+  exports.Note = Note; 
 })(this);
