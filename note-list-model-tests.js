@@ -16,11 +16,9 @@ function returnsEmptyArrayByDefault() {
 
 function returnsNoteList() {
   var noteList = new NoteList();
-  var note1 = 'first test note'
-  var note2 = 'second test note'
 
-  noteList.add(note1);
-  noteList.add(note2);
+  noteList.add('first test note');
+  noteList.add('second test note');
 
   assert.isTrue(noteList.listNotes().length === 2);
   assert.isTrue(noteList.listNotes()[0].getText() === 'first test note');
