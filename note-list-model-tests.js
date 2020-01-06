@@ -23,7 +23,7 @@ function returnsNoteList() {
   noteList.add(note2);
 
   assert.isTrue(noteList.listNotes().length === 2);
-  assert.isTrue(noteList.listNotes()[0] === 'first test note');
+  assert.isTrue(noteList.listNotes()[0].getText() === 'first test note');
 }
 
 returnsEmptyArrayByDefault();

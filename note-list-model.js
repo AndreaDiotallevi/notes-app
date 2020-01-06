@@ -9,7 +9,7 @@
     },
 
     add: function(noteText) {
-      this._list.push(noteText);
+      this._list.push(new Note(noteText));
     }
   }
   exports.NoteList = NoteList;
