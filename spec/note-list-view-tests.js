@@ -1,15 +1,15 @@
-function returnsEmptyStringWhenNoNotes() {
+function returnsEmptyUnorderedListAfterInstantiation() {
   var noteList = new NoteList();
   var noteListView = new NoteListView(noteList);
-  assert.isTrue(noteListView.returnHTML() === "<ul></ul>")
+  assert.isTrue(noteListView.htmlString() === "<ul></ul>")
 }
 
-function returnsOneNoteInHTML() {
+function returnsHtmlStringWithNotes() {
   var noteList = new NoteList();
   noteList.add("first note");
   var noteListView = new NoteListView(noteList);
-  assert.isTrue(noteListView.returnHTML() === "<ul><li><div>first note</div></li></ul>")
+  assert.isTrue(noteListView.htmlString() === "<ul><li><div>first note</div></li></ul>")
 }
 
-returnsEmptyStringWhenNoNotes();
-returnsOneNoteInHTML();
+returnsEmptyUnorderedListAfterInstantiation();
+returnsHtmlStringWithNotes();

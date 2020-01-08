@@ -4,10 +4,10 @@
   }
 
   NoteListView.prototype = {
-    returnHTML: function() {
+    htmlString: function() {
       var HTMLString = "";
       this._noteList.forEach(function(note) {
-        HTMLString += `<li><div>${note.getText()}</div></li>`
+        HTMLString += `<li><div>${note.text()}</div></li>`
       })
       return "<ul>" + HTMLString + "</ul>";
     }
