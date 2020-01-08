@@ -1,0 +1,23 @@
+{
+  "name": "notes-app",
+  "version": "1.0.0",
+  "description": "## User stories",
+  "main": "index.js",
+  "dependencies": {
+    "http-server": "^0.12.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndreaDiotallevi/notes-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndreaDiotallevi/notes-app/issues"
+  },
+  "homepage": "https://github.com/AndreaDiotallevi/notes-app#readme"
+}
