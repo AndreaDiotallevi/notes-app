@@ -15,7 +15,7 @@ function changesElementInnerHtml() {
 
   var noteList = new NoteList();
   var noteController = new NoteController(noteList);
-  noteController.htmlString();
+  noteController.addHtml();
   
   assert.isTrue(document.getElementById("app").innerHTML === "<ul><li><div>Favourite drink</div></li></ul>")
 }

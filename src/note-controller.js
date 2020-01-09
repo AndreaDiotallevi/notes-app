@@ -5,7 +5,7 @@
   };
 
   NoteController.prototype = {
-    htmlString: function() {
+    addHtml: function() {
       var htmlString = this._noteListView.htmlString();
       document.getElementById("app").innerHTML = htmlString;
     }
