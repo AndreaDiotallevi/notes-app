@@ -4,7 +4,7 @@
   }
 
   SingleNoteView.prototype = {
-    noteHtml: function() {
+    htmlString: function() {
       return `<div>${this._note.text()}</div>`
     }
   }

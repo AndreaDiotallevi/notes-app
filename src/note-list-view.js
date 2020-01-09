@@ -5,11 +5,11 @@
 
   NoteListView.prototype = {
     htmlString: function() {
-      var HTMLString = "";
+      var htmlString = "";
       this._noteList.listNotes().forEach(function(note) {
-        HTMLString += `<li><div>${note.text().substring(0, 20)}</div></li>`
+        htmlString += `<li><div>${note.text().substring(0, 20)}</div></li>`
       })
-      return "<ul>" + HTMLString + "</ul>";
+      return "<ul>" + htmlString + "</ul>";
     }
   }
 
