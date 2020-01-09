@@ -7,7 +7,7 @@
     htmlString: function() {
       var HTMLString = "";
       this._noteList.forEach(function(note) {
-        HTMLString += `<li><div>${note.text()}</div></li>`
+        HTMLString += `<li><div>${note.text().substring(0, 20)}</div></li>`
       })
       return "<ul>" + HTMLString + "</ul>";
     }
