@@ -5,25 +5,21 @@
   };
 
   NoteController.prototype = {
-    addHtmlString: function() {
+    addHtmlNoteList: function() {
       var htmlString = this._noteListView.htmlString();
       document.getElementById("app").innerHTML = htmlString;
     },
 
     addHtmlNote: function() {
-      console.log("inside addHtmlNote")
-      window.addEventListener("hashchange", this.changeToSingleNoteHtml);
+      var noteListView = this._noteListView;
+      window.addEventListener("hashchange", function() {
+        var noteId = parseInt(location.hash.split('#notes/')[1], 10);
+        var note = noteListView.getNoteById(noteId);
+        var singleNoteView = new SingleNoteView(note);
+        var htmlString = singleNoteView.htmlString();
+        document.getElementById("app").innerHTML = htmlString;
+      });
     },
-
-    changeToSingleNoteHtml: function() {
-      console.log("inside changetosinglenotehtml")
-      var noteId = parseInt(location.hash.split('#notes/'), 10);
-      var note = this._noteListView.getNoteById(noteId)
-      console.log(note)
-      var singleNoteView = new SingleNoteView(note)
-      var htmlString = singleNoteView.htmlString();
-      document.getElementById("app").innerHTML = htmlString;
-    }
   }
 
   exports.NoteController = NoteController;

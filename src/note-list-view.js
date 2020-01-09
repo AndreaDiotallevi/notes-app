@@ -13,7 +13,7 @@
     },
 
     getNoteById: function(noteId) {
-      return this._noteList.find(note => note.id() === noteId)
+      return this._noteList.listNotes().find(note => note.id() === noteId)
     }
   }
 
