@@ -9,7 +9,11 @@
     },
 
     addNote: function(noteText) {
-      this._notes.push(new Note(noteText));
+      this._notes.push(new Note(noteText, this.nextNoteId()));
+    },
+
+    nextNoteId: function() {
+      return this._notes.length;
     }
   }
   exports.NoteList = NoteList;
