@@ -6,14 +6,14 @@ function returnsEmptyUnorderedListAfterInstantiation() {
 
 function returnsHtmlStringWithNotes() {
   var noteList = new NoteList();
-  noteList.add("first note");
+  noteList.addNote("first note");
   var noteListView = new NoteListView(noteList);
   assert.isTrue(noteListView.htmlString() === "<ul><li><div>first note</div></li></ul>")
 }
 
 function returnsFirstTwentyCharacters() {
   var noteList = new NoteList();
-  noteList.add("12345678901234567890123");
+  noteList.addNote("12345678901234567890123");
   var noteListView = new NoteListView(noteList);
   assert.isTrue(noteListView.htmlString() === "<ul><li><div>12345678901234567890</div></li></ul>")
 }

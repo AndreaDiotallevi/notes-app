@@ -8,7 +8,7 @@
       return this._notes;
     },
 
-    add: function(noteText) {
+    addNote: function(noteText) {
       this._notes.push(new Note(noteText));
     }
   }

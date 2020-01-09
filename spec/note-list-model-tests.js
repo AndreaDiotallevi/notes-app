@@ -6,8 +6,8 @@ function returnsEmptyArrayAfterInstantiation() {
 function returnsArrayOfNotes() {
   var noteList = new NoteList();
 
-  noteList.add('first test note');
-  noteList.add('second test note');
+  noteList.addNote('first test note');
+  noteList.addNote('second test note');
 
   assert.isTrue(noteList.listNotes().length === 2);
   assert.isTrue(noteList.listNotes()[0].text() === 'first test note');
