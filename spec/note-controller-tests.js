@@ -16,9 +16,15 @@ function changesElementInnerHtml() {
   var noteList = new NoteList();
   var noteController = new NoteController(noteList);
   noteController.addHtmlString();
+  noteId = noteList.listNotes()[0].id();
   
-  assert.isTrue(document.getElementById("app").innerHTML === "<ul><li><div>Favourite drink</div></li></ul>")
+  assert.isTrue(document.getElementById("app").innerHTML === `<ul><li><a href="#notes/${noteId}">Favourite drink</a></li></ul>`)
+}
+
+function showsSingleNoteHtml() {
+
 }
 
 canBeInstantiated();
 changesElementInnerHtml();
+showsSingleNoteHtml();

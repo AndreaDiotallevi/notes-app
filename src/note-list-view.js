@@ -7,9 +7,13 @@
     htmlString: function() {
       var htmlString = "";
       this._noteList.listNotes().forEach(function(note) {
-        htmlString += `<li><div>${note.text().substring(0, 20)}</div></li>`
+        htmlString += `<li><a href="#notes/${note.id()}">${note.text().substring(0, 20)}</a></li>`
       })
       return "<ul>" + htmlString + "</ul>";
+    },
+
+    getNoteById: function(noteId) {
+      return this._noteList.find(note => note.id() === noteId)
     }
   }
 
