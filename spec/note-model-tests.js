@@ -4,7 +4,7 @@ function testReturnNoteText() {
 }
 
 function testReturnNoteId() {
-  var note = new Note('first note', 0);
+  var note = new Note('first note');
   assert.isTrue(note.id() === 0);
 }
 

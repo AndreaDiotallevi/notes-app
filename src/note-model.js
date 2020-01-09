@@ -1,7 +1,9 @@
 (function(exports) {
+  var idCounter = 0;
+
   function Note(noteText, id) {
     this._text = noteText;
-    this._id = id;
+    this._id = idCounter++ - 1;
   };
 
   Note.prototype = {
