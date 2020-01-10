@@ -18,7 +18,7 @@ function changesElementInnerHtml() {
   noteController.addHtmlNoteList();
   noteId = noteList.listNotes()[0].id();
   
-  assert.isTrue(document.getElementById("app").innerHTML === `<ul><li><a id="${noteId}" href="#notes/${noteId}">Favourite drink</a></li></ul>`)
+  assert.isTrue(document.getElementById("notes-container").innerHTML === `<ul><li><a id="${noteId}" href="#notes/${noteId}">Favourite drink</a></li></ul>`)
 }
 
 function showsSingleNoteHtml() {
@@ -40,7 +40,7 @@ function showsSingleNoteHtml() {
   document.getElementById(noteId).click();
   setTimeout(function() {
     assert.isTrue(document.URL === initialUrl + `#notes/${noteId}`);
-    assert.isTrue(document.getElementById("app").innerHTML === '<div>12345678901234567890123</div>');
+    assert.isTrue(document.getElementById("single-note-container").innerHTML === '<div>12345678901234567890123</div>');
   }, 1000)
 }
 
