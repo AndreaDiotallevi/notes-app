@@ -1,6 +1,6 @@
 (function(exports) {
   function NoteController(noteList) {
-    noteList.addNote("Favourite drink")
+    noteList.addNote("Favourite drink");
     this._noteListView = new NoteListView(noteList);
   };
 
@@ -11,6 +11,7 @@
     },
 
     addHtmlNote: function() {
+      // var self = this;
       var noteListView = this._noteListView;
       window.addEventListener("hashchange", function() {
         var noteId = parseInt(location.hash.split('#notes/')[1], 10);

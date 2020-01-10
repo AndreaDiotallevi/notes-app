@@ -7,7 +7,7 @@
     htmlString: function() {
       var htmlString = "";
       this._noteList.listNotes().forEach(function(note) {
-        htmlString += `<li><a href="#notes/${note.id()}">${note.text().substring(0, 20)}</a></li>`
+        htmlString += `<li><a id="${note.id()}" href="#notes/${note.id()}">${note.text().substring(0, 20)}</a></li>`
       })
       return "<ul>" + htmlString + "</ul>";
     },

@@ -9,9 +9,7 @@ function returnsHtmlStringWithNotes() {
   noteList.addNote("first note");
   var noteListView = new NoteListView(noteList);
   var noteId = noteList.listNotes()[0].id();
-  // console.log(noteListView.htmlString());
-  // console.log(`<ul><li><a href="#notes/${noteId}">first note</a></li></ul>`)
-  assert.isTrue(noteListView.htmlString() === `<ul><li><a href="#notes/${noteId}">first note</a></li></ul>`)
+  assert.isTrue(noteListView.htmlString() === `<ul><li><a id="${noteId}" href="#notes/${noteId}">first note</a></li></ul>`)
 }
 
 function returnsFirstTwentyCharacters() {
@@ -19,7 +17,7 @@ function returnsFirstTwentyCharacters() {
   noteList.addNote("12345678901234567890123");
   var noteListView = new NoteListView(noteList);
   var noteId = noteList.listNotes()[0].id();
-  assert.isTrue(noteListView.htmlString() === `<ul><li><a href="#notes/${noteId}">12345678901234567890</a></li></ul>`)
+  assert.isTrue(noteListView.htmlString() === `<ul><li><a id="${noteId}" href="#notes/${noteId}">12345678901234567890</a></li></ul>`)
 }
 
 returnsEmptyUnorderedListAfterInstantiation();
