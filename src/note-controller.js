@@ -11,11 +11,10 @@
     },
 
     addHtmlNote: function() {
-      // var self = this;
-      var noteListView = this._noteListView;
+      var self = this;
       window.addEventListener("hashchange", function() {
         var noteId = parseInt(location.hash.split('#notes/')[1], 10);
-        var note = noteListView.getNoteById(noteId);
+        var note = self._noteListView.getNoteById(noteId);
         var singleNoteView = new SingleNoteView(note);
         var htmlString = singleNoteView.htmlString();
         document.getElementById("app").innerHTML = htmlString;
