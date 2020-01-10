@@ -1,7 +1,6 @@
 (function(exports) {
-  function NoteController(noteList) {
-    noteList.addNote("Favourite drink");
-    this._noteListView = new NoteListView(noteList);
+  function NoteController(noteList, noteListView = NoteListView) {
+    this._noteListView = new noteListView(noteList);
   };
 
   NoteController.prototype = {
@@ -11,22 +10,22 @@
     },
 
     addHtmlNote: function() {
-      var self = this;
       window.addEventListener("hashchange", function() {
         var noteId = parseInt(location.hash.split('#notes/')[1], 10);
-        var note = self._noteListView.getNoteById(noteId);
+        var note = this._noteListView.getNoteById(noteId);
         var singleNoteView = new SingleNoteView(note);
         var htmlString = singleNoteView.htmlString();
         document.getElementById("single-note-container").innerHTML = htmlString;
-      });
+      }.bind(this));
     },
 
     addNote: function() {
       document.getElementById('text').addEventListener("submit", function(event) {
         event.preventDefault();
-        console.log(event);
-        console.log(event.target.elements["note-text"].value);
-      });
+        var noteText = event.target.elements["note-text"].value;
+        this._noteListView._noteList.addNote(noteText);
+        this.addHtmlNoteList();
+      }.bind(this));
     }
   }
 
