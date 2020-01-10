@@ -7,7 +7,7 @@
   NoteController.prototype = {
     addHtmlNoteList: function() {
       var htmlString = this._noteListView.htmlString();
-      document.getElementById("app").innerHTML = htmlString;
+      document.getElementById("notes-container").innerHTML = htmlString;
     },
 
     addHtmlNote: function() {
@@ -17,9 +17,17 @@
         var note = self._noteListView.getNoteById(noteId);
         var singleNoteView = new SingleNoteView(note);
         var htmlString = singleNoteView.htmlString();
-        document.getElementById("app").innerHTML = htmlString;
+        document.getElementById("single-note-container").innerHTML = htmlString;
       });
     },
+
+    addNote: function() {
+      document.getElementById('text').addEventListener("submit", function(event) {
+        event.preventDefault();
+        console.log(event);
+        console.log(event.target.elements["note-text"].value);
+      });
+    }
   }
 
   exports.NoteController = NoteController;

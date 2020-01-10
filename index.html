@@ -5,7 +5,22 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="app">hello</div>
+  <div id="app">
+    <h1>Notes</h1>
+
+    <form action='/notes' method='post' id='text'>
+      <input type='textarea' name='note-text'>
+      <input type='submit' value='Create'>
+    </form>
+
+    <h2>Note List</h2>
+    <div id='notes-container'>
+    </div>
+
+    <h2>Single Note</h2>
+    <div id='single-note-container'>
+    </div>
+  </div>
 
   <script src='src/note-model.js'></script>
   <script src='src/note-list-model.js'></script>
@@ -19,6 +34,7 @@
     var noteController = new NoteController(noteList);
     noteController.addHtmlNoteList();
     noteController.addHtmlNote();
+    noteController.addNote();
   </script>
 </body>
 </html>
